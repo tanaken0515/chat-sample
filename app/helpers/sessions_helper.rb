@@ -1,5 +1,6 @@
 module SessionsHelper
   def login(user)
+    cookies.encrypted[:user_id] = user.id
     session[:user_id] = user.id
   end
 
@@ -12,6 +13,7 @@ module SessionsHelper
   end
 
   def logout
+    cookies.encrypted[:user_id] = nil
     reset_session
   end
 end
