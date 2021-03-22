@@ -1,0 +1,15 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.message {
+  &__speaker {
+    font-weight: bold;
+
+    &.-is-owner {
+      color: blue;
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+    }
+  }
+}

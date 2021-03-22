@@ -1,7 +1,9 @@
 <h1>Chat room</h1>
 
 <div id="messages">
-  <%= render @messages %>
+  <% @messages.each do |message| %>
+    <%= render partial: 'messages/message', locals: { message: message, owned: message.owned_by?(current_user) } %>
+  <% end %>
 </div>
 
 <form>
