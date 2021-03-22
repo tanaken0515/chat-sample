@@ -1,6 +1,9 @@
+<% owned ||= false %>
 <div class="message">
   <p>
-    <b><%= message.speaker&.name || 'guest' %>:</b>
+    <span class="message__speaker <%= owned ? '-is-owner' : '' %>">
+      <%= message.speaker&.name || 'guest' %>:
+    </span>
     <%= message.content %>
   </p>
 </div>
